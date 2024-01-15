@@ -1,0 +1,139 @@
+.field {
+  @apply px-7 min-h-60 h-full relative;
+  font-family: 'Montserrat';
+
+  .textarea {
+    @apply resize-none w-full h-full bg-transparent font-medium text-[18px] outline-none px-[10px] py-[5px] rounded-[5px];
+    border: 1px solid transparent;
+    transition: all 0.3s;
+
+    &:focus {
+      border: 1px solid #afa3a34f;
+    }
+  }
+
+  .minimodal {
+    @apply -bottom-3 absolute flex items-center justify-center p-1;
+    width: auto;
+    user-select: none;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &>div {
+      @apply flex items-center gap-1;
+    }
+
+    & .new {
+      background: transparent;
+
+      &:hover {
+        background: #dacece92;
+      }
+    }
+
+    & .title {
+      @apply pr-2 p-1 pl-3 gap-[6px] text-[18px] font-semibold text-gray-600 cursor-pointer rounded relative;
+      transition: all 0.3s;
+      border-right: 1px solid #afa3a3ac;
+
+      &:hover {
+        background: #afa3a384;
+      }
+
+      & svg {
+        transition: all 0.3s;
+
+        &.active {
+          transform: rotate(-90deg)
+        }
+      }
+
+      &>.fontmodal {
+        @apply absolute top-full left-0 w-max py-1 px-2 mt-2 max-h-28 overflow-auto cursor-default transition-all;
+
+        ul {
+          display: grid;
+          gap: 3px;
+
+          li {
+            cursor: pointer;
+            padding: 4px 4px;
+            padding-right: 15px;
+            border-radius: 5px;
+            transition: all 0.3s;
+
+            &:hover {
+              background: rgba(75, 85, 99, 0.237);
+            }
+          }
+        }
+
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-20px);
+
+        &.active {
+          visibility: visible;
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+    }
+
+    & .btns {
+      @apply mx-2;
+    }
+
+    & .more {
+      @apply pl-2;
+      border-left: 1px solid #afa3a3ac;
+
+      .bigger {
+        font-size: 21px;
+      }
+
+      & svg {
+        transition: all 0.3s;
+
+        &.active {
+          transform: rotate(-90deg)
+        }
+      }
+
+      &>.colormodal {
+        @apply absolute top-full right-0 max-w-52 max-h-32 w-full py-3 px-2 mt-2 overflow-auto cursor-default transition-all;
+
+        ul {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          text-align: center;
+          gap: 5px;
+
+          li {
+            cursor: pointer;
+            padding: 4px 4px;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #000;
+            margin: 0 auto;
+            transition: all 0.3s;
+
+            &:hover {
+              background: rgba(75, 85, 99, 0.237);
+            }
+          }
+        }
+
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-20px);
+
+        &.active {
+          visibility: visible;
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+    }
+  }
+}

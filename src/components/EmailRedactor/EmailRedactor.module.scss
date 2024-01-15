@@ -1,0 +1,150 @@
+.cover {
+  @apply w-full bg-slate-100 rounded-[20px] shadow-xl flex flex-col gap-[18px] transition-all overflow-hidden;
+
+  & .nav {
+    @apply flex gap-[6px] justify-end w-full px-6 pt-7;
+  }
+
+  &.full {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 0;
+  }
+
+  .block {
+    @apply flex items-center gap-5 justify-between mx-6 px-3;
+
+    &>p {
+      color: #a79797;
+      font-family: "Montserrat";
+    }
+
+    &>b {
+      @apply text-2xl capitalize;
+    }
+
+    &>span {
+      @apply text-lg;
+      white-space: nowrap;
+      font-family: "Montserrat";
+      color: #8a7a7a;
+
+      &>b {
+        @apply w-8 inline-flex flex-col items-center justify-center;
+      }
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #e0c7c793;
+      padding-bottom: 20px;
+    }
+
+    &.last {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-top: auto;
+      margin-bottom: 5px;
+
+      & span {
+        color: #000;
+        font-weight: 600;
+      }
+
+      & b {
+        margin-left: 4px;
+      }
+
+      & p {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        & svg {
+          font-size: 32px;
+          padding: 2px 5px;
+          color: #1f3e7e;
+          border-radius: 5px;
+          border: 1px solid #1f3e7e;
+        }
+      }
+    }
+
+    &>div {
+      @apply flex items-center gap-[13px];
+
+      &>h2 {
+        font-size: 22px;
+        color: #947d7d;
+      }
+
+      &>img {
+        width: 45px;
+        height: 45px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+
+      &>p {
+        font-size: 20px;
+        text-decoration: underline;
+      }
+    }
+
+    &>ul {
+      @apply flex items-center gap-3 font-medium;
+      font-size: 20px;
+      font-family: 'Montserrat';
+    }
+
+    & button {
+      @apply px-2 rounded-md;
+      transition: all 0.3s;
+
+      &.active {
+        border-bottom: 1px solid #000;
+      }
+    }
+  }
+}
+
+.appload {
+  @apply px-6 py-7 flex items-center justify-between gap-4;
+  background: #e1f7d6c7;
+
+  & .new {
+    background: transparent;
+    position: relative;
+    font-size: 1.4rem;
+
+    &>input {
+      @apply absolute text-[0px] w-full h-full left-0 top-0;
+      cursor: pointer;
+    }
+  }
+
+  & .big {
+    background: transparent;
+    font-size: 1.6rem;
+  }
+
+  &>div {
+    @apply flex items-center gap-2;
+  }
+
+  & .main_btn {
+    @apply px-7 py-[10px] bg-black text-white font-semibold text-xl rounded-[10px] ml-2;
+    transition: all 0.3s;
+
+    &:hover {
+      box-shadow: 1px 5px 15px #00000089;
+    }
+
+    &:active {
+      transform: translateY(5px);
+      box-shadow: 1px 0px 15px #00000089;
+
+    }
+  }
+}

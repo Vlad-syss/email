@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800");
+
+form {
+  @apply grid max-w-[600px] w-full mx-auto items-center gap-6 px-5 py-7 bg-slate-100 rounded-[20px] shadow-xl;
+
+  user-select: none;
+
+  &>.item {
+    @apply grid gap-3 relative;
+
+    &>.error {
+      @apply text-red-600 absolute top-[101.5%] left-2 uppercase text-xs;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s;
+
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0px);
+      }
+    }
+
+    &>label {
+      @apply text-lg font-bold px-4 pt-2;
+      font-family: 'Montserrat';
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    &>input {
+      @apply text-lg font-medium bg-transparent outline-none py-4 px-6 rounded-lg transition-all;
+      box-shadow: 0px 0px 3px #0000003f;
+      font-family: 'Montserrat';
+      border: 1px solid transparent;
+
+      // font-family: 'Ubuntu';
+
+
+      &:focus {
+        box-shadow: 0px 0px 12px #0000003f;
+      }
+
+      &.active {
+        border: 1px solid red;
+
+        &::placeholder {
+          color: red;
+        }
+      }
+    }
+  }
+
+  .btn {
+    @apply p-5 uppercase font-bold text-xl rounded-2xl text-white mt-5 shadow-lg transition-all;
+    background: #8577dd;
+    font-family: 'Montserrat';
+    letter-spacing: 2px;
+
+    &:hover {
+      background: #6458b5;
+    }
+
+    &:disabled {
+      pointer-events: none;
+      opacity: 0.6;
+    }
+  }
+
+  &>p {
+    @apply text-slate-400 text-center opacity-70;
+  }
+}

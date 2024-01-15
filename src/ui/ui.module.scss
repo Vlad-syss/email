@@ -1,0 +1,37 @@
+.btn {
+  @apply flex items-center justify-center p-2 rounded-[5px] text-slate-800 relative;
+  font-size: 1.2rem;
+  background: #e5d8d88b;
+  transition: all 0.3s;
+
+  &:hover {
+    background: #d7c7c78b;
+
+    & span {
+      transform: translateX(-50%) translateY(0px);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  & span {
+    @apply absolute -top-[50.5%] left-[50%];
+    transform: translateX(-50%) translateY(10px);
+    transition: all 0.3s;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 14px;
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 5px;
+    z-index: 1;
+    font-family: "Montserrat";
+    background: #140f0ecb;
+  }
+}
+
+.modal {
+  @apply bg-white rounded-[10px] shadow-2xl;
+  z-index: 1;
+  // border: 1px solid #000;
+}
